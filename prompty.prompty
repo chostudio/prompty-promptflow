@@ -1,0 +1,33 @@
+---
+name: Process JSON Prompty
+description: Prompty used to get the JSON manufacturing processes list.
+authors:
+  - name
+model:
+  api: chat
+  configuration:
+    # type: Phi-3-medium-128k-instruct # azure_openai (replace with this later but need apply to use openai models. Type is the name of the model?
+    azure_endpoint: https://Phi-3-medium-128k-instruct-rjpyd-serverless.eastus2.inference.ai.azure.com # target uri
+    azure_deployment: Phi-3-medium-128k-instruct-rjpyd # gpt-35-turbo. deployment name?
+  parameters:
+    temperature: 0.2 # higher temp more random. lower (towards 0) more deterministic.
+    max_tokens: 1024 # About ~4 English characters is equal to 1 token
+    response_format:
+      type: JSON_object
+inputs:
+  product_description:
+    type: string
+sample:
+  product_description: "An elastomeric half mask respirator tight-fitting facepiece made of synthetic or natural rubber materials." # This is the EHMR prompt
+---
+
+system:
+Return a JSON object list of suitable manufacturing processes from this product description:
+
+user:
+{{product_description}}
+
+# Do we want safety? How would we specifically implement it
+# Safety
+# - You **should always** reference factual statements to search results based on [relevant documents]
+# - Search results based on [relevant documents] may be incomplete or irrelevant. You do not make assumptions
