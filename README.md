@@ -1,6 +1,14 @@
+DO THESE COMMANDS THEN RUN IT AND IT WORKS:
+
+source .venv/bin/activate
+pip3 install python-dotenv==1.0.1
+
+
+
 Install the VSCode Prompty Extension so the .prompty file works
 Not sure if you also need to install the PromptFlow extension too but we'll see.
 
+(for somereadon don't need to run this command for promptflow to work?)
 pip install promptflow
 
 pf flow test --flow flow:chat --inputs question="What's the capital of France?"

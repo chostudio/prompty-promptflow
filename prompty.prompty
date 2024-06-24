@@ -2,7 +2,6 @@
 name: Process JSON Prompty
 description: Prompty used to get the JSON manufacturing processes list.
 authors:
-  - name
 model:
   api: chat
   configuration:
